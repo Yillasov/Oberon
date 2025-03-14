@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "paths": {
+    "base": "/Users/yessine/Oberon",
+    "test_results": "/Users/yessine/Oberon/test_results",
+    "regression_history": "/Users/yessine/Oberon/test_results/regression_history"
+  },
+  "testing": {
+    "stop_on_failure": false,
+    "log_level": "INFO"
+  },
+  "system": {
+    "update_rate": 10
+  }
+}

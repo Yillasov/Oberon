@@ -1,0 +1,34 @@
+{
+  "updates": [
+    {
+      "version": "1.1.0",
+      "description": "Performance improvements and bug fixes",
+      "components": ["system_core", "health_monitor"],
+      "url": "https://example.com/updates/neuromorphic-1.1.0.zip",
+      "size_bytes": 1048576,
+      "checksum": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "requires_restart": true,
+      "dependencies": {
+        "firmware": ">=2.0.0"
+      },
+      "metadata": {
+        "release_notes": "This update improves system stability and fixes memory leaks."
+      }
+    },
+    {
+      "version": "1.2.0",
+      "description": "New features for neuromorphic processing",
+      "components": ["system_core", "neuromorphic_runtime", "event_bus"],
+      "url": "https://example.com/updates/neuromorphic-1.2.0.zip",
+      "size_bytes": 2097152,
+      "checksum": "sha256:a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c",
+      "requires_restart": true,
+      "dependencies": {
+        "firmware": ">=2.1.0"
+      },
+      "metadata": {
+        "release_notes": "This update adds support for advanced neuromorphic processing algorithms."
+      }
+    }
+  ]
+}

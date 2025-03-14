@@ -1,0 +1,41 @@
+# Standard CPU deployment configuration
+system:
+  hardware_type: standard_cpu
+  version: 1.0.0
+  log_level: INFO
+  
+components:
+  system_core:
+    enabled: true
+    
+  component_registry:
+    enabled: true
+    
+  event_bus:
+    enabled: true
+    max_history: 100
+    
+  config_loader:
+    enabled: true
+    config_dir: "./config"
+    
+  health_monitor:
+    enabled: true
+    check_interval: 10
+    
+  validation_framework:
+    enabled: true
+    
+  system_lifecycle:
+    enabled: true
+
+logging:
+  console:
+    enabled: true
+    level: INFO
+  file:
+    enabled: true
+    level: DEBUG
+    path: "./logs/system.log"
+    max_size_mb: 10
+    backup_count: 5
