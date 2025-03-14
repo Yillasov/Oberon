@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Oberon
 =======
 # The Oberon Project
@@ -31,4 +31,3 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## License
 
 This project is licensed under the Proprietary License. See the [LICENSE.md](LICENSE.md) file for details.
->>>>>>> ddf0727 (Initial commit of The Oberon Project)
