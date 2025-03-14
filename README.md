@@ -1,6 +1,5 @@
 
 # Oberon
-=======
 # The Oberon Project
 
 A comprehensive software development kit for the end-to-end design and implementation of advanced, cutting-edge Unmanned Combat Aerial Vehicles (UCAVs) that integrate biological principles directly on neuromorphic hardware.
