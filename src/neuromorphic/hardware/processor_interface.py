@@ -71,6 +71,205 @@ class NeuromorphicProcessor(ABC):
             Power usage in milliwatts
         """
         pass
+    
+    @abstractmethod
+    def get_hardware_info(self) -> Dict[str, Any]:
+        """
+        Get information about the hardware platform.
+        
+        Returns:
+            Dictionary containing hardware specifications and capabilities
+        """
+        pass
+    
+    @abstractmethod
+    def set_neuron_parameters(self, neuron_ids: List[int], parameters: Dict[str, Any]) -> bool:
+        """
+        Set parameters for specific neurons.
+        
+        Args:
+            neuron_ids: List of neuron IDs to configure
+            parameters: Dictionary of parameter names and values
+            
+        Returns:
+            True if parameters were set successfully, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def set_synapse_parameters(self, pre_ids: List[int], post_ids: List[int], 
+                              parameters: Dict[str, Any]) -> bool:
+        """
+        Set parameters for specific synapses.
+        
+        Args:
+            pre_ids: List of presynaptic neuron IDs
+            post_ids: List of postsynaptic neuron IDs
+            parameters: Dictionary of parameter names and values
+            
+        Returns:
+            True if parameters were set successfully, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def get_neuron_states(self, neuron_ids: Optional[List[int]] = None) -> Dict[str, np.ndarray]:
+        """
+        Get the current state of neurons.
+        
+        Args:
+            neuron_ids: Optional list of neuron IDs to query (all neurons if None)
+            
+        Returns:
+            Dictionary mapping state variables to their values
+        """
+        pass
+    
+    @abstractmethod
+    def load_network(self, network_definition: Dict[str, Any]) -> bool:
+        """
+        Load a complete network definition.
+        
+        Args:
+            network_definition: Dictionary containing the network structure and parameters
+            
+        Returns:
+            True if network was loaded successfully, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def save_network(self) -> Dict[str, Any]:
+        """
+        Save the current network configuration.
+        
+        Returns:
+            Dictionary containing the network structure and parameters
+        """
+        pass
+    
+    @abstractmethod
+    def connect(self) -> bool:
+        """
+        Establish connection to the hardware.
+        
+        Returns:
+            True if connection was successful, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def disconnect(self) -> None:
+        """Disconnect from the hardware."""
+        pass
+    
+    @abstractmethod
+    def is_connected(self) -> bool:
+        """
+        Check if the processor is connected to hardware.
+        
+        Returns:
+            True if connected, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def run_batch(self, input_batch: List[np.ndarray], durations: List[float]) -> List[np.ndarray]:
+        """
+        Run multiple inputs in batch mode.
+        
+        Args:
+            input_batch: List of input spike patterns
+            durations: List of durations to run each input
+            
+        Returns:
+            List of output spike patterns
+        """
+        pass
+    
+    @abstractmethod
+    def get_performance_stats(self) -> Dict[str, Any]:
+        """
+        Get performance statistics from the processor.
+        
+        Returns:
+            Dictionary containing performance metrics
+        """
+        pass
+    
+    @abstractmethod
+    def supports_feature(self, feature_name: str) -> bool:
+        """
+        Check if the processor supports a specific feature.
+        
+        Args:
+            feature_name: Name of the feature to check
+            
+        Returns:
+            True if the feature is supported, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def get_supported_neuron_models(self) -> List[str]:
+        """
+        Get the list of supported neuron models.
+        
+        Returns:
+            List of supported neuron model names
+        """
+        pass
+    
+    @abstractmethod
+    def get_supported_learning_rules(self) -> List[str]:
+        """
+        Get the list of supported learning rules.
+        
+        Returns:
+            List of supported learning rule names
+        """
+        pass
+    
+    @abstractmethod
+    def apply_learning_rule(self, rule_name: str, parameters: Dict[str, Any]) -> bool:
+        """
+        Apply a learning rule to update weights.
+        
+        Args:
+            rule_name: Name of the learning rule to apply
+            parameters: Parameters for the learning rule
+            
+        Returns:
+            True if learning rule was applied successfully, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def set_spike_recording(self, neuron_ids: List[int], enable: bool = True) -> bool:
+        """
+        Enable or disable spike recording for specific neurons.
+        
+        Args:
+            neuron_ids: List of neuron IDs to configure
+            enable: True to enable recording, False to disable
+            
+        Returns:
+            True if recording configuration was successful, False otherwise
+        """
+        pass
+    
+    @abstractmethod
+    def get_recorded_spikes(self, neuron_ids: Optional[List[int]] = None) -> Dict[int, List[float]]:
+        """
+        Get recorded spikes from specified neurons.
+        
+        Args:
+            neuron_ids: Optional list of neuron IDs to query (all recorded neurons if None)
+            
+        Returns:
+            Dictionary mapping neuron IDs to lists of spike times
+        """
+        pass
 
 
 class SpikeEncoder(ABC):
